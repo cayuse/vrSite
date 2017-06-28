@@ -31,14 +31,18 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        uniVResity
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        @if (Auth::guest())
+                        @else
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/classes">My Classes</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
