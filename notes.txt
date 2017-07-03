@@ -1,0 +1,47 @@
+Entrust information
+https://github.com/Zizaco/entrust#installation
+
+php artisan db:seed --class=RolesAndPermissionsSeeder
+
+Seeder for entrust
+https://github.com/thomasfw/RolesAndPermissionsSeeder
+
+
+
+
+class RolesAndPermissionsSeeder extends Seeder {
+
+
+    protected $roles = [
+        'admin' => [
+            'display_name'	=> 'Administrator',
+            'description'	=> 'administer the website and manage users',
+            'permissions' 	=> ['can_add_users', 'can_add_classes'],
+        ],
+
+        'teacher' => [
+            'permissions' 	=> ['can_add_classes'],
+        ],
+
+        'student' => [
+            'permissions'   => ['can_join_classes'],
+        ],
+
+        'member' => []
+    ];
+
+
+    protected $permissions = [
+
+        'can_add_classes' => [
+            'display_name' => 'Create Classes',
+            'description'  => 'add a class for students to join',
+        ],
+
+        'can_add_users' => [],
+
+        'can_join_classes' => []
+
+    ];
+
+

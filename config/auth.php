@@ -68,6 +68,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+            'table' => 'users',
         ],
 
         // 'users' => [
@@ -76,6 +77,17 @@ return [
         // ],
     ],
 
+    /*
+     * The following is for entrust
+      however, it duplicates the above information, so i don't think its needed
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+            'table' => 'users',
+        ],
+    ],
+    */
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
