@@ -59,11 +59,21 @@ class RolesAndPermissionsSeeder extends Seeder
         $can_join_classes->description = 'can enroll as student or observer';
         $can_join_classes->save();
 
-        // UserTableSeeder will make a default account, here we will seed it with the admin role.
-        // select the user.
+        // UserTableSeeder will make default accounts, here we will seed it with the admin role.
+        // select the admin
         $user = User::where('name', '=', 'administrator')->first();
         // attach the 'admin' role to the 'administrator'
-        $user->attachRole($admin); // parameter can be an Role object, array, or id
+        $user->attachRole($admin);
+
+        // select the teacher
+        $user = User::where('name', '=', 'teacher')->first();
+        // attach teacher role
+        $user->attachRole($teacher);
+
+        // select the student
+        $user = User::where('name', '=', 'student')->first();
+        // attach student role
+        $user->attachRole($student);
 
         // finally we attach the roles to the permissions.
         //admin has all

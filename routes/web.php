@@ -20,6 +20,8 @@ Route::get('classes', function () {
     return view('classes');
 });
 
+Route::resources('user', 'UserController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

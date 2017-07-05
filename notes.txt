@@ -1,12 +1,22 @@
 Random Commands you need from time to time:
-composer dump-autoload
 
+// both of these have something to do with fixing 'cached bs' in laravel.. something that should be handled
+// more eloquently imo
+composer dump-autoload
+php artisan config:cache
+
+
+to push to the site
+git push production master
 
 Entrust information
 https://github.com/Zizaco/entrust#installation
 
+to push to
 
 
 
-
-
+// to clear and reset the database
+php artisan migrate:reset
+php artisan migrate
+php artisan db:seed
