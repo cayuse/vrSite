@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('course_user'); // drop first in case it exists
         Schema::dropIfExists('users');
     }
 }

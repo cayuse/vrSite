@@ -20,7 +20,7 @@ Route::get('classes', function () {
     return view('classes');
 });
 
-Route::resources('user', 'UserController');
+//Route::resources('user', 'UserController');
 
 Auth::routes();
 

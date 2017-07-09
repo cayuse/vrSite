@@ -21,10 +21,11 @@
             <ul class="nav navbar-nav">
                 @if (Auth::guest())
                 @else
-                    @if ($user->hasRole('admin'))
+                    @if (Auth::user()->hasRole('admin'))
                         <li class="dropdown">
-                            <a ref="" class=""dropdown-toggle
+                            <a ref="" class=dropdown-toggle"></a>
                         </li>
+                    @endif
                     <li><a href="/home">Home</a></li>
                     <li><a href="/classes">My Classes</a></li>
                 @endif
