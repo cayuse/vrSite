@@ -22,8 +22,15 @@
                 @if (Auth::guest())
                 @else
                     @if (Auth::user()->hasRole('admin'))
-                        <li class="dropdown">
-                            <a ref="" class=dropdown-toggle"></a>
+                        <li class="dropdown" role="admin">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Admin <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/users">Users</a>
+                                </li>
+                            </ul>
                         </li>
                     @endif
                     <li><a href="/home">Home</a></li>

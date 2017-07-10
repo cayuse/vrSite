@@ -20,3 +20,8 @@ to push to
 php artisan migrate:reset
 php artisan migrate
 php artisan db:seed
+
+
+>>> $users.first;
+PHP error:  Use of undefined constant first - assumed 'first' on line 1
+>>>
