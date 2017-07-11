@@ -9,6 +9,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+                    {{ bin2hex(random_bytes(20)) }}
                     You are logged in!
                 </div>
             </div>
