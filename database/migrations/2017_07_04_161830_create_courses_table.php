@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('token');
+            $table->text('wall');
             $table->boolean('archived')->default(false);
             $table->boolean('closed')->default(false);
             $table->timestamps();

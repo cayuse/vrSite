@@ -39,9 +39,13 @@ https://oit.colorado.edu/tutorial/zoom-host-meeting-and-invite-participants
 form builder
 https://laravelcollective.com/docs/5.4/html
 
+// font combinations
+https://designshack.net/articles/typography/10-more-great-google-font-combinations-you-can-copy/
+
+
 deploying a laravel app
 https://devmarketer.io/learn/deploy-laravel-5-app-lemp-stack-ubuntu-nginx/
-
+git remote add production ssh://root@vr.deepbondi.net/var/repo/site.git
 1. Allow creation and storing of unique URLs that will be class ids.
 2. When opening a url, generate, on the fly, .bat file that passes the class id to the unity program.
 3. Turn bat into exe, automatically.

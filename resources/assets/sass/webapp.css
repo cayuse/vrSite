@@ -1,3 +1,10 @@
+h1 {
+  font: 400 80px/1.2 'Nixie One', Georgia, serif !important;
+}
+
+p {
+  font: 400 15px/1.6 'Ledger', Garamond, Georgia, serif !important;
+}
 html, body {
   background: url('https://1.bp.blogspot.com/-xyCCKR_JeGE/WKqvbONhtSI/AAAAAAAACD8/IlaTjQntl3Uwq22VMA7zdmHo4kSLafnGgCLcB/s1600/univresity.jpg');
   background-color: #fff;
