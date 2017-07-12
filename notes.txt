@@ -12,16 +12,56 @@ git push production master
 Entrust information
 https://github.com/Zizaco/entrust#installation
 
-to push to
-
-
-
 // to clear and reset the database
 php artisan migrate:reset
 php artisan migrate
 php artisan db:seed
 
+<<<<<<< HEAD
 
 >>> $users.first;
 PHP error:  Use of undefined constant first - assumed 'first' on line 1
 >>>
+=======
+some random zoom information
+https://oit.colorado.edu/tutorial/zoom-host-meeting-and-invite-participants
+
+form builder
+https://laravelcollective.com/docs/5.4/html
+
+
+1. Allow creation and storing of unique URLs that will be class ids.
+2. When opening a url, generate, on the fly, .bat file that passes the class id to the unity program.
+3. Turn bat into exe, automatically.
+When the url was clicked, it will download a tiny exe program that will open the installed unity client in a proper room
+
+David, next thing will be to allow choice of avatar on the dashboard. Have pictures of few avatars and ability to select one you wanna use
+
+
+[11:42]
+(I mean, user wanna use)
+
+
+[11:42]
+then, the id of the avatar will be also passed as a command line parameter
+
+
+[11:43]
+so when teacher or student logs in, the avatar of their choice will be selected from the list of available avatars.
+
+
+[11:44]
+if you want to have fun, use webGL to display the avatars, rotating, as 3D animations, instead of just having a picture of them. We can give you avatars we have as fbx files
+
+
+[11:48]
+The idea is that the user will fist install large unity app, and then call this app with parametrized mini-program to be always downloaded from the website. Later on, if we have time, we can develop proper web UI embeded in the unity client, but for now, I prefer to do it the zoom-way :wink:
+
+
+[11:48]
+Theo, is everything clear?
+
+
+[11:48]
+David?
+>>>>>>> a089125964df5b4f36f14aa9d5310d7ba9aade98
