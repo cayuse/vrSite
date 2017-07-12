@@ -20,8 +20,9 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @if (Auth::guest())
+                    <li><a href="/home">Home</a></li>
                 @else
-                    @if (Auth::user()->hasRole('admin'))
+                    @if (Auth::user()->hasRole('admin')) <!-- special admin menus -->
                         <li class="dropdown" role="admin">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Admin <span class="caret"></span>
@@ -33,8 +34,9 @@
                             </ul>
                         </li>
                     @endif
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/classes">My Classes</a></li>
+                    @if (Auth::user()->can('add_courses'))<!-- list of courses, all for admin, or specific to teacher -->
+                    <li><a href="/course">My Courses</a></li>
+                    @endif
                 @endif
             </ul>
 

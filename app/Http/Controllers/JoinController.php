@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Course;
 
 class JoinController extends Controller
 {
     public function index(Request $request, $id)
     {
-        //$name = $request->input('name');
-        //$path = trim(parse_url($url, PHP_URL_PATH), '/');
-        dd($id);
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $course = Course::where('token', $id)->first();
+        return view('join.join')->with(compact('course'));
     }
 }

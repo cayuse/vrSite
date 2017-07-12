@@ -25,15 +25,10 @@ Route::get('classes', function () {
     return view('classes');
 });
 
-<<<<<<< HEAD
-Route::get('users', 'UserController@index');
-
-//ute::resource('users', 'UserController');
-=======
-//Route::get('j', 'JoinController@')
+Route::resource('course', 'CourseController',
+    ['except' => ['show', 'destroy']]);
 
 Route::get('users', 'UserController@index');
->>>>>>> a089125964df5b4f36f14aa9d5310d7ba9aade98
 
 Auth::routes();
 

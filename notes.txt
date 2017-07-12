@@ -2,27 +2,37 @@ Random Commands you need from time to time:
 
 // both of these have something to do with fixing 'cached bs' in laravel.. something that should be handled
 // more eloquently imo
-composer dump-autoload
-php artisan config:cache
 
 
+// artisan tinker thing
+php artisan tinker
+
+composer install --no-dev
 to push to the site
 git push production master
 
 Entrust information
 https://github.com/Zizaco/entrust#installation
 
+$user->hasRole('owner');   // false
+$user->hasRole('admin');   // true
+$user->can('edit-user');   // false
+$user->can('create-post'); // true
+
+$user->hasRole(['owner', 'admin']);       // true
+$user->can(['edit-user', 'create-post']); // true
+
 // to clear and reset the database
 php artisan migrate:reset
 php artisan migrate
 php artisan db:seed
+composer dump-autoload
+php artisan config:cache
 
-<<<<<<< HEAD
 
->>> $users.first;
+ $users.first;
 PHP error:  Use of undefined constant first - assumed 'first' on line 1
->>>
-=======
+
 some random zoom information
 https://oit.colorado.edu/tutorial/zoom-host-meeting-and-invite-participants
 
@@ -64,4 +74,3 @@ Theo, is everything clear?
 
 [11:48]
 David?
->>>>>>> a089125964df5b4f36f14aa9d5310d7ba9aade98

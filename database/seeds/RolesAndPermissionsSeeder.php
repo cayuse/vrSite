@@ -31,7 +31,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $student = new Role();
         $student->name = 'student';
         $student->display_name = 'Student';
-        $student->description = 'can join and attend classes';
+        $student->description = 'can join and attend courses';
         $student->save();
 
         $member = new Role();
@@ -41,23 +41,23 @@ class RolesAndPermissionsSeeder extends Seeder
         $member->save();
 
         // build permissions
-        $can_add_classes = new Permission();
-        $can_add_classes->name = 'can_add_classas';
-        $can_add_classes->display_name = 'Create Classes';
-        $can_add_classes->description = 'add a class for students to join';
-        $can_add_classes->save();
+        $add_courses = new Permission();
+        $add_courses->name = 'add_courses';
+        $add_courses->display_name = 'Create Courses';
+        $add_courses->description = 'add a course for students to join';
+        $add_courses->save();
 
-        $can_edit_users = new Permission();
-        $can_edit_users->name = 'can_edit_users';
-        $can_edit_users->display_name = 'User Permissions';
-        $can_edit_users->description = 'can edit and promote users to other roles';
-        $can_edit_users->save();
+        $edit_users = new Permission();
+        $edit_users->name = 'edit_users';
+        $edit_users->display_name = 'User Permissions';
+        $edit_users->description = 'can edit and promote users to other roles';
+        $edit_users->save();
 
-        $can_join_classes = new Permission();
-        $can_join_classes->name = 'can_join_classes';
-        $can_join_classes->display_name = 'Can Enroll';
-        $can_join_classes->description = 'can enroll as student or observer';
-        $can_join_classes->save();
+        $join_courses = new Permission();
+        $join_courses->name = 'join_courses';
+        $join_courses->display_name = 'Can Enroll';
+        $join_courses->description = 'can enroll as student or observer';
+        $join_courses->save();
 
         // UserTableSeeder will make default accounts, here we will seed it with the admin role.
         // select the admin
@@ -77,13 +77,13 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // finally we attach the roles to the permissions.
         //admin has all
-        $admin->attachPermissions(array($can_add_classes, $can_edit_users, $can_join_classes));
+        $admin->attachPermissions(array($add_courses, $edit_users, $join_courses));
 
-        // teacher can create classes
-        $teacher->attachPermission($can_add_classes);
+        // teacher can create courses
+        $teacher->attachPermission($add_courses, $join_courses);
 
-        // student can join classes
-        $student->attachPermission($can_join_classes);
+        // student can join courses
+        $student->attachPermission($join_courses);
 
     }
 }
