@@ -13,11 +13,11 @@ class CourseController extends Controller
 
         if (Auth::user() && Auth::user()->hasRole('admin'))
         {
-            $courses = Course::all();
+            $courses = Course::orderBy('created_at', 'asc')->paginate(10);
 
         } elseif (Auth::user() && Auth::user()->hasRole('teacher'))
         {
-            $courses = Auth::user()->courses;
+            $courses = Course::orderBy('created_at', 'asc')->where('user_id', Auth::id())->paginate(10);
         }
         else
         {

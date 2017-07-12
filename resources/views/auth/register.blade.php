@@ -10,15 +10,6 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{$errors->has('role') ? ' has-error' : '' }}">
-                            <label for="Role" class="col-md-4 control-label">Role</label>
-
-                            <div class="col-md-6">
-                                <label class="radio-inline"><input checked type="radio" name="role" value="student">Student</label>
-                                <label class="radio-inline"><input type="radio" name="role" value="teacher">Presenter</label>
-                            </div>
-                        </div>
-
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 

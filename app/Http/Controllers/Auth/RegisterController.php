@@ -68,11 +68,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-       if ($data['role'] == "teacher") {
-           $role = Role::where('name', '=', 'teacher')->first();
-       } else {
-           $role = Role::where('name', '=', 'student')->first();
-       }
+       $role = Role::where('name', '=', 'teacher')->first();
        $new_user->attachRole($role);
        return $new_user;
     }

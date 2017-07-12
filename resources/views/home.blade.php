@@ -11,6 +11,8 @@
                 <div class="panel-body">
                     {{ bin2hex(random_bytes(20)) }}
                     You are logged in!
+                    <br>
+                    This page is just random stuff, it will either be filled in or removed later.
                 </div>
             </div>
         </div>

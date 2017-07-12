@@ -28,7 +28,9 @@ Route::get('classes', function () {
 Route::resource('course', 'CourseController',
     ['except' => ['show', 'destroy']]);
 
-Route::get('users', 'UserController@index');
+Route::resource('users', 'UserController',
+    ['except' => ['show', 'destroy', 'create', 'save']]);
+//Route::get('users', 'UserController@index');
 
 Auth::routes();
 

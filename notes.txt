@@ -39,6 +39,8 @@ https://oit.colorado.edu/tutorial/zoom-host-meeting-and-invite-participants
 form builder
 https://laravelcollective.com/docs/5.4/html
 
+deploying a laravel app
+https://devmarketer.io/learn/deploy-laravel-5-app-lemp-stack-ubuntu-nginx/
 
 1. Allow creation and storing of unique URLs that will be class ids.
 2. When opening a url, generate, on the fly, .bat file that passes the class id to the unity program.
@@ -72,5 +74,12 @@ The idea is that the user will fist install large unity app, and then call this 
 Theo, is everything clear?
 
 
-[11:48]
-David?
+kpietroszek [11:07 AM]
+ok, so here is the summary of the next tasks:
+1. Add "start" button to start presenting. It's better than showing weird url
+2. Let user choose avatar: display avatar fbx using webGL. The easiest way to do that is to create mini app in Unity, compile it to webGL and embed in the page. But you can also program it directly in javascript/webGL (that would be your javascript assignment ;-)).
+3. Try to compile the project for webVR and see how (badly) it works
+
+
+[11:07]
+4. Find out how to pass command line-like arguments to webVR apps. We still need to pass the room id
