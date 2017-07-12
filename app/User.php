@@ -11,6 +11,10 @@ class User extends Authenticatable
     use Notifiable;
     use EntrustUserTrait;
 
+    public function courses()
+    {
+        return $this->hasmany('App\Course');
+    }
     /**
      * The attributes that are mass assignable.
      *

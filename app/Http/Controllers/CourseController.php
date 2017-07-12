@@ -17,7 +17,7 @@ class CourseController extends Controller
 
         } elseif (Auth::user() && Auth::user()->hasRole('teacher'))
         {
-            $courses = Course::where('user_id', Auth::id());
+            $courses = Auth::user()->courses;
         }
         else
         {

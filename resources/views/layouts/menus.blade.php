@@ -20,8 +20,8 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @if (Auth::guest())
-                    <li><a href="/home">Home</a></li>
                 @else
+                    <li><a href="/home">Home</a></li>
                     @if (Auth::user()->hasRole('admin')) <!-- special admin menus -->
                         <li class="dropdown" role="admin">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
