@@ -20,17 +20,20 @@
                             <th>#</th>
                             <th>Title</th>
                             <th>Professor Name</th>
-                            <th>Link</th>
+                            <th>Copy</th>
+                            <th>Go</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($courses as $key=>$course)
                             <?php $curr = $courses->perPage() * ($courses->currentPage() -1 ) + $key +1 ?>
                         <tr>
+                            <?php $myURL = url('/') . "/j/" . $course->token ?>
                             <th scope="row">{{$curr}}</th>
                             <td><a href="{{ action('CourseController@edit', [$course->id]) }}">{{ $course->name }}</a></td>
                             <td>{{ $course->user->name }}</td>
-                            <td>{{ url('/') . "/j/" . $course->token }}</td>
+                            <td>{{ $myURL }}</td>
+                            <td><a href="{{ $myURL }}">Course</a></td>
                         </tr>
                             <?php ++$key; ?>
                         @endforeach

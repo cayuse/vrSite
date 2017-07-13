@@ -6,10 +6,22 @@
 
     <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-            <div class="panel-heading">Joining Course</div>
-            <h1>{{ $course->name }}: Will Begin Shortly</h1>
-            <br>
-            ok, not really, but at least you can click into a page based on the original course.
+            <div class="panel-heading">{{ $course->name }}</div>
+            @if ($course->motd)
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            <h3>{!!  $course->motd !!}</h3>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @if ($course->user_id == Auth::id())
+                <a href=# class="btn btn-info">Start Session</a>
+            @else
+                <a href=# class="btn btn-info">Join Session</a>
+            @endif
+
             </div>
         </div>
     </div>

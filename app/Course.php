@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $fillable = [
-        'name', 'token', 'user_id'
+        'name', 'motd','token', 'user_id'
     ];
 
     public function user()
