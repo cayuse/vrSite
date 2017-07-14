@@ -13,8 +13,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
