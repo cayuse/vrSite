@@ -21,6 +21,6 @@
         @yield('content') <!-- display main content -->
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
