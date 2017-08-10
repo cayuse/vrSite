@@ -1,11 +1,20 @@
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $.get( "http://127.0.0.1:8000/course", function( data ) {
-            $( ".result" ).html( data );
-        });
-    });
-</script>
-                    <div class="result">test</div>
-https://apple-com-p.surfly.com/www/ST/mgSjdDRagRAiVFgUs03trmg//////////us-hed/SURFLYROOT//////////us-hed/shop/buy-mac/macbook-air/macbook-air?SURFLY=T?SURFLY_TAB_PREFIX=_surfly_tab0
+@extends('layouts.app')
+
+@section('pageTitle', 'Home')
+
+@section('content')
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">Dashboard</div>
+
+            <div class="panel-body">
+                {{ bin2hex(random_bytes(20)) }}
+                You are logged in!
+                <br>
+                This page is just random stuff, it will either be filled in or removed later.
+            </div>
+        </div>
+    </div>
+
+@endsection
