@@ -17,18 +17,21 @@ class UsersTableSeeder extends Seeder
             'name' => 'administrator',
             'email' => 'admin@univresity.org',
             'password' => bcrypt('secret'),
+            'avatar_id' => 1
         ]);
         // teacher
         DB::table('users')->insert([
             'name' => 'teacher',
             'email' => 'teacher@univresity.org',
             'password' => bcrypt('secret'),
+            'avatar_id' => 1
         ]);
         // student
         DB::table('users')->insert([
             'name' => 'student',
             'email' => 'student@univresity.org',
             'password' => bcrypt('secret'),
+            'avatar_id' => 1
         ]);
     }
 }

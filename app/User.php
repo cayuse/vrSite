@@ -15,13 +15,18 @@ class User extends Authenticatable
     {
         return $this->hasmany('App\Course');
     }
+
+    public function avatar()
+    {
+        return $this->belongsTo('App\Avatar');
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'roleradio'
+        'name', 'email', 'password', 'roleradio', 'avatar_id'
     ];
 
     /**

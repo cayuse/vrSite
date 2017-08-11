@@ -17,13 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('avatar_id')->unsigned()->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('avatar_id')->references('id')->on('avatars')
-                ->onUpdate('cascade');
         });
     }
 

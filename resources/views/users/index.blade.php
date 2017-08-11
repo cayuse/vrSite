@@ -13,6 +13,7 @@
                     <table class="table table-striped">
                         <thead class="thead-default">
                         <tr>
+                            <th>Avatar</th>
                             <th>#</th>
                             <th>Name</th>
                             <th>E-Mail</th>
@@ -22,7 +23,8 @@
                         @foreach ($users as $key=>$user)
                             <?php $curr = $users->perPage() * ($users->currentPage() -1 ) + $key +1 ?>
                             <tr>
-                                <th scope="row">{{$curr}}</th>
+                                <th scope = "row"><img src="/images/avatars/{{ $user->avatar->path }}" class="avatar avatar-sm" ></th>
+                                <td>{{$curr}}</td>
                                 <td><a href="{{ action('UserController@edit', [$user->id]) }}">{{ $user->name }}</a></td>
                                 <td>{{ $user->email }}</td>
                             </tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Avatar;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -30,7 +31,8 @@ class UserController extends Controller
         } else {
             abort(403);
         }
-        return view('users.edit')->with(compact('user'));
+        $avatars = Avatar::orderBy('name', 'asc')->get();
+        return view('users.edit')->with(compact('user','avatars'));
     }
 
     public function profile()
