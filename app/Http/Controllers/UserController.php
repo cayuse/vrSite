@@ -32,4 +32,9 @@ class UserController extends Controller
         }
         return view('users.edit')->with(compact('user'));
     }
+
+    public function profile()
+    {
+        return view('users.profile', array('user' => Auth::user()) );
+    }
 }

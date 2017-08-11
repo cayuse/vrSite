@@ -13,6 +13,6 @@
 
 {{ Form::hidden('user_id', Auth::id()) }}
 
-<div class="form-group">
+<div class="pull-left">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

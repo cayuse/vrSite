@@ -28,9 +28,13 @@ Route::get('classes', function () {
 Route::resource('course', 'CourseController',
     ['except' => ['show', 'destroy']]);
 
+Route::resource('avatar', 'AvatarController',
+    ['except' => ['show']]);
+
 Route::resource('users', 'UserController',
     ['except' => ['show', 'destroy', 'create', 'save']]);
-//Route::get('users', 'UserController@index');
+
+Route::get('profile', 'UserController@profile');
 
 Auth::routes();
 
