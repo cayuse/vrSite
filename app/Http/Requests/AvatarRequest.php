@@ -30,7 +30,7 @@ class AvatarRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'path' => 'required',
+            'path' => 'required:mimes:jpeg,png',
             'argument' => 'required'
         ];
     }

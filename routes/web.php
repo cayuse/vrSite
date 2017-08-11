@@ -28,7 +28,7 @@ Route::get('classes', function () {
 Route::resource('course', 'CourseController',
     ['except' => ['show', 'destroy']]);
 
-Route::resource('avatar', 'AvatarController',
+Route::resource('avatars', 'AvatarController',
     ['except' => ['show']]);
 
 Route::resource('users', 'UserController',

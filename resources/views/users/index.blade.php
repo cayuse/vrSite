@@ -6,11 +6,10 @@
 
     <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-            <div class="panel-heading">Listing Users</div>
+            <div class="panel-heading">Users</div>
 
             <div class="panel-body">
                 @if (count($users))
-                    <h3>Index of Users</h3>
                     <table class="table table-striped">
                         <thead class="thead-default">
                         <tr>

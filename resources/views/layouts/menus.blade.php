@@ -29,7 +29,14 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="/users">Users</a>
+                                    <a href="/users">
+                                        <i class = "fa fa-btn fa-users"></i>
+                                        Users
+                                    </a>
+                                    <a href="/avatars">
+                                        <i class = "fa fa-btn fa-user-circle-o"></i>
+                                        Avatars
+                                    </a>
                                 </li>
                             </ul>
                         </li>
