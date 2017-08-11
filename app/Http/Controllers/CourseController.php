@@ -39,7 +39,6 @@ class CourseController extends Controller
 
     public function edit($id)
     {
-
         if (Auth::user() && Auth::user()->can('add_courses')) {
             $course = Course::findOrFail($id);
             return view('courses.edit')->with(compact('course'));
@@ -56,8 +55,12 @@ class CourseController extends Controller
 
     public function update($id, CourseRequest $request)
     {
-        $course = Course::findOrFail($id);
-        $course->update($request->all());
+        if (Auth::user() && Auth::user()->can('add_courses')) {
+            $course = Course::findOrFail($id);
+            $course->update($request->all());
+        } else {
+            abort(403);
+        }
 
         return redirect('course');
     }

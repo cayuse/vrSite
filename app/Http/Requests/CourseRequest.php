@@ -14,8 +14,7 @@ class CourseRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
-        if (Auth::User()->can('create_courses')) {
+        if (Auth::User() && Auth::User()->can('add_courses')) {
             return true;
         }
         return false;

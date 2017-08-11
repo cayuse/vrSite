@@ -9,8 +9,8 @@
             <div class="panel-heading">Edit User</div>
 
             <div class="panel-body">
-                {!! Form::model($user, ['method' => 'PATCH', 'action' => ['CourseController@update', $user->id]]) !!}
-                @include('users._form', ['submitButtonText' => 'Update User'])
+                {!! Form::model($user, ['method' => 'PATCH', 'action' => ['UserController@update', $user->id]]) !!}
+                    @include('users._form', ['submitButtonText' => 'Update User'])
                 {!! Form::close() !!}
                 @include('errors.list')
             </div>

@@ -32,7 +32,7 @@ Route::resource('avatars', 'AvatarController',
     ['except' => ['show']]);
 
 Route::resource('users', 'UserController',
-    ['except' => ['show', 'destroy', 'create', 'save']]);
+    ['except' => ['show', 'destroy', 'create']]);
 
 Route::get('profile', 'UserController@profile');
 

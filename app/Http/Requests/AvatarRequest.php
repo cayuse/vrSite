@@ -28,10 +28,21 @@ class AvatarRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|min:3',
-            'path' => 'required:mimes:jpeg,png',
-            'argument' => 'required'
-        ];
+        switch ($this->method()) {
+            case 'POST': {
+                return [
+                    'name' => 'required|min:3',
+                    'path' => 'required:mimes:jpeg,png',
+                    'argument' => 'required'
+                ];
+            }
+            case 'PATCH': {
+                return [
+                    'name' => 'required|min:3',
+                    'path' => 'nullable:mimes:jpeg,png',
+                    'argument' => 'required'
+                ];
+            }
+        }
     }
 }

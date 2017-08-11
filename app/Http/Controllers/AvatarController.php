@@ -31,12 +31,28 @@ class AvatarController extends Controller
 
     public function edit($id)
     {
-
+        if (Auth::user() && Auth::user()->hasRole('admin')) {
+            $avatar = Avatar::findOrFail($id);
+            return view('avatars.edit')->with(compact('avatar'));
+        } else {
+            abort(403);
+        }
     }
 
     public function update($id, AvatarRequest $request)
     {
+        $avatar = Avatar::findOrFail($id);
+        $attributes = $request->all();
+        if ($attributes['path']) {
+            $path = time() . '.' . $request->path->getClientOriginalExtension();
+            $request->path->move(base_path() . '/public/images/avatars', $path);
+        } else {
+            $path = $avatar->path;
+        }
+        $attributes['path'] = $path;
+        $avatar->update($attributes);
 
+        return redirect('avatars');
     }
 
     public function store(AvatarRequest $request)
@@ -45,7 +61,7 @@ class AvatarController extends Controller
             $attributes = $request->all();
             $path = time() . '.' . $request->path->getClientOriginalExtension();
             $request->path->move(base_path() . '/public/images/avatars', $path);
-            $attributes['path']= $path;
+            $attributes['path'] = $path;
 
             Avatar::create($attributes);
             return redirect('avatars');
